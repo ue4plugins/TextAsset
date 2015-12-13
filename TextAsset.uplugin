@@ -1,0 +1,31 @@
+{
+	"FileVersion" : 3,
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"FriendlyName" : "Text Asset",
+	"Description" : "Adds an editable text content asset for personal notes.",
+	"Category" : "Editor",
+	"CreatedBy" : "Headcrash Industries LLC",
+	"CreatedByURL" : "http://headcrash.industries",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : false,
+	"IsBetaVersion" : false,
+	"Installed" : false,
+	"Modules" :
+	[
+		{
+			"Name" : "TextAsset",
+			"Type" : "Runtime",
+			"LoadingPhase" : "Default"
+		},
+		{
+			"Name" : "TextAssetEditor",
+			"Type" : "Editor",
+			"LoadingPhase" : "Default"
+		}
+
+	]
+}
