@@ -13,7 +13,6 @@
 #include "SlateStyle.h"
 #include "EditorStyle.h"
 #include "ModuleManager.h"
-#include "WorkspaceMenuStructureModule.h"
 #include "TextAsset.h"
 #include "Toolkits/AssetEditorToolkit.h"
 #include "Toolkits/IToolkit.h"

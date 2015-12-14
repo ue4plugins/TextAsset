@@ -10,7 +10,7 @@ public class TextAssetEditor : ModuleRules
 			new string[] {
 				"AssetTools",
 				"MainFrame",
-				"WorkspaceMenuStructure",
+//				"WorkspaceMenuStructure",
 			}
 		);
 
@@ -18,9 +18,7 @@ public class TextAssetEditor : ModuleRules
 			new string[] {
 				"TextAssetEditor/Private",
 				"TextAssetEditor/Private/AssetTools",
-                "TextAssetEditor/Private/Customizations",
 				"TextAssetEditor/Private/Factories",
-				"TextAssetEditor/Private/Models",
 				"TextAssetEditor/Private/Styles",
 				"TextAssetEditor/Private/Widgets",
 			}
@@ -47,7 +45,7 @@ public class TextAssetEditor : ModuleRules
 			new string[] {
 				"AssetTools",
 				"UnrealEd",
-				"WorkspaceMenuStructure",
+//				"WorkspaceMenuStructure",
 			}
 		);
 	}
