@@ -1,7 +1,8 @@
 # TextAsset
 
 Unreal Engine 4 plug-in that adds a text asset and editor for personal notes.
-![Screenshot](Docs/Screenshot.png)
+
+![Screenshot](Docs/screenshot.png)
 
 
 ## About
