@@ -1,11 +1,16 @@
 # TextAsset
 
 Unreal Engine 4 plug-in that adds a text asset and editor for personal notes.
+![Screenshot](Docs/Screenshot.png)
 
 
 ## About
 
-TODO
+The TextAsset plug-in implements two modules that demonstrate how to add a new
+type of content asset to Unreal Engine 4. The asset itself stores a simple text
+string that can be used for adding personal notes or other textual information
+to your project, or to be consumed within Blueprints. The plug-in also includes
+an asset editor, asset factories, and asset actions for the Content Browser. 
 
 
 ## Supported Platforms
