@@ -22,7 +22,7 @@ platforms.
 
 ## Dependencies
 
-This plug-in requires Visual Studio and either a C++ code project or a the full
+This plug-in requires Visual Studio and either a C++ code project or the full
 Unreal Engine 4 source code from GitHub. If you are new to programming in UE4,
 please see the official [Programming Guide](https://docs.unrealengine.com/latest/INT/Programming/index.html)! 
 
