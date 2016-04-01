@@ -18,6 +18,6 @@ class TEXTASSET_API UTextAsset
 public:
 
 	/** Holds the stored text. */
-	UPROPERTY(BlueprintReadOnly, Category="TextAsset")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="TextAsset")
 	FText Text;
 };
