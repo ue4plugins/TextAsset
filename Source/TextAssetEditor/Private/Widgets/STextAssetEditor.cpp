@@ -10,6 +10,12 @@
 /* STextAssetEditor interface
  *****************************************************************************/
 
+STextAssetEditor::~STextAssetEditor()
+{
+	FCoreUObjectDelegates::OnObjectPropertyChanged.RemoveAll(this);
+}
+
+
 void STextAssetEditor::Construct(const FArguments& InArgs, UTextAsset* InTextAsset, const TSharedRef<ISlateStyle>& InStyle)
 {
 	TextAsset = InTextAsset;
@@ -27,6 +33,8 @@ void STextAssetEditor::Construct(const FArguments& InArgs, UTextAsset* InTextAss
 					.Text(TextAsset->Text)
 			]
 	];
+
+	FCoreUObjectDelegates::OnObjectPropertyChanged.AddSP(this, &STextAssetEditor::HandleTextAssetPropertyChanged);
 }
 
 
@@ -42,6 +50,15 @@ void STextAssetEditor::HandleEditableTextBoxTextChanged(const FText& NewText)
 void STextAssetEditor::HandleEditableTextBoxTextCommitted(const FText& Comment, ETextCommit::Type CommitType)
 {
 	TextAsset->Text = EditableTextBox->GetText();
+}
+
+
+void STextAssetEditor::HandleTextAssetPropertyChanged(UObject* Object, FPropertyChangedEvent& PropertyChangedEvent)
+{
+	if (Object == TextAsset)
+	{
+		EditableTextBox->SetText(TextAsset->Text);
+	}
 }
 
 

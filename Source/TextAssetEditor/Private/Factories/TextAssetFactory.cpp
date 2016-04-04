@@ -25,8 +25,6 @@ UObject* UTextAssetFactory::FactoryCreateBinary(UClass* Class, UObject* InParent
 	UTextAsset* TextAsset = nullptr;
 	FString TextString;
 
-	FEditorDelegates::OnAssetPreImport.Broadcast(this, Class, InParent, Name, Type);
-
 	if (FFileHelper::LoadFileToString(TextString, *CurrentFilename))
 	{
 		TextAsset = NewObject<UTextAsset>(InParent, Class, Name, Flags);

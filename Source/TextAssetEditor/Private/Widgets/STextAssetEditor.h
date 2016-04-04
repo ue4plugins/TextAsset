@@ -16,6 +16,9 @@ public:
 
 public:
 
+	/** Virtual destructor. */
+	virtual ~STextAssetEditor();
+
 	/**
 	 * Construct this widget
 	 *
@@ -32,6 +35,9 @@ private:
 
 	/** Callback for committed text in the editable text box. */
 	void HandleEditableTextBoxTextCommitted(const FText& Comment, ETextCommit::Type CommitType);
+
+	/** Callback for property changes in the text asset. */
+	void HandleTextAssetPropertyChanged(UObject* Object, FPropertyChangedEvent& PropertyChangedEvent);
 
 private:
 

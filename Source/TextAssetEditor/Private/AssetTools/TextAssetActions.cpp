@@ -41,7 +41,7 @@ void FTextAssetActions::GetActions(const TArray<UObject*>& InObjects, FMenuBuild
 					if (TextAsset.IsValid() && !TextAsset->Text.IsEmpty())
 					{
 						TextAsset->Text = FText::FromString(TextAsset->Text.ToString().Reverse());
-						TextAsset->MarkPackageDirty();
+						TextAsset->PostEditChange();
 					}
 				}
 			}),
