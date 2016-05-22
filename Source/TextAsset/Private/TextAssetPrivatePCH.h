@@ -2,15 +2,5 @@
 
 #pragma once
 
-
-/* Private dependencies
- *****************************************************************************/
-
-#include "Core.h"
-#include "CoreUObject.h"
-
-
-/* Private includes
- *****************************************************************************/
-
-#include "TextAsset.h"
+#include "Runtime/Core/Public/Core.h"
+#include "Runtime/CoreUObject/Public/CoreUObject.h"

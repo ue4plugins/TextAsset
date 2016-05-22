@@ -2,6 +2,7 @@
 
 #include "TextAssetPrivatePCH.h"
 #include "ModuleInterface.h"
+#include "TextAsset.h"
 
 
 /**
@@ -12,7 +13,7 @@ class FTextAssetModule
 {
 public:
 
-	// IModuleInterface interface
+	//~ IModuleInterface interface
 
 	virtual void StartupModule() override { }
 	virtual void ShutdownModule() override { }
