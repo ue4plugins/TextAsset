@@ -82,7 +82,8 @@ void FTextAssetEditorToolkit::Initialize(UTextAsset* InTextAsset, const EToolkit
 		Layout,
 		true /*bCreateDefaultStandaloneMenu*/,
 		true /*bCreateDefaultToolbar*/,
-		InTextAsset);
+		InTextAsset
+	);
 
 	RegenerateMenusAndToolbars();
 }
@@ -97,25 +98,25 @@ FString FTextAssetEditorToolkit::GetDocumentationLink() const
 }
 
 
-void FTextAssetEditorToolkit::RegisterTabSpawners(const TSharedRef<class FTabManager>& TabManager)
+void FTextAssetEditorToolkit::RegisterTabSpawners(const TSharedRef<class FTabManager>& InTabManager)
 {
-	WorkspaceMenuCategory = TabManager->AddLocalWorkspaceMenuCategory(LOCTEXT("WorkspaceMenu_TextAssetEditor", "Text Asset Editor"));
+	WorkspaceMenuCategory = InTabManager->AddLocalWorkspaceMenuCategory(LOCTEXT("WorkspaceMenu_TextAssetEditor", "Text Asset Editor"));
 	auto WorkspaceMenuCategoryRef = WorkspaceMenuCategory.ToSharedRef();
 
-	FAssetEditorToolkit::RegisterTabSpawners(TabManager);
+	FAssetEditorToolkit::RegisterTabSpawners(InTabManager);
 
-	TabManager->RegisterTabSpawner(TextEditorTabId, FOnSpawnTab::CreateSP(this, &FTextAssetEditorToolkit::HandleTabManagerSpawnTab, TextEditorTabId))
+	InTabManager->RegisterTabSpawner(TextEditorTabId, FOnSpawnTab::CreateSP(this, &FTextAssetEditorToolkit::HandleTabManagerSpawnTab, TextEditorTabId))
 		.SetDisplayName(LOCTEXT("TextEditorTabName", "Text Editor"))
 		.SetGroup(WorkspaceMenuCategoryRef)
 		.SetIcon(FSlateIcon(FEditorStyle::GetStyleSetName(), "LevelEditor.Tabs.Viewports"));
 }
 
 
-void FTextAssetEditorToolkit::UnregisterTabSpawners(const TSharedRef<class FTabManager>& TabManager)
+void FTextAssetEditorToolkit::UnregisterTabSpawners(const TSharedRef<class FTabManager>& InTabManager)
 {
-	FAssetEditorToolkit::UnregisterTabSpawners(TabManager);
+	FAssetEditorToolkit::UnregisterTabSpawners(InTabManager);
 
-	TabManager->UnregisterTabSpawner(TextEditorTabId);
+	InTabManager->UnregisterTabSpawner(TextEditorTabId);
 }
 
 
