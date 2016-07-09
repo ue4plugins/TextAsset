@@ -1,7 +1,7 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
 #include "TextAssetEditorPrivatePCH.h"
-#include "SMultiLineEditableTextBox.h"
+#include "STextAssetEditor.h"
 
 
 #define LOCTEXT_NAMESPACE "STextAssetEditor"

@@ -2,27 +2,21 @@
 
 #pragma once
 
+#include "Developer/AssetTools/Public/AssetToolsModule.h"
 
-/* Private dependencies
- *****************************************************************************/
+#include "Editor/ContentBrowser/Public/ContentBrowserModule.h"
+#include "Editor/EditorStyle/Public/EditorStyle.h"
+#include "Editor/UnrealEd/Public/Factories.h"
+#include "Editor/UnrealEd/Public/UnrealEd.h"
+#include "Editor/UnrealEd/Public/Toolkits/IToolkit.h"
 
-#include "CoreUObject.h"
-#include "AssetToolsModule.h"
-#include "SlateBasics.h"
-#include "Engine.h"
-#include "SlateStyle.h"
-#include "EditorStyle.h"
-#include "ModuleManager.h"
-#include "TextAsset.h"
-#include "Toolkits/AssetEditorToolkit.h"
-#include "Toolkits/IToolkit.h"
-#include "UnrealEd.h"
+#include "Runtime/Core/Public/Core.h"
+#include "Runtime/Core/Public/Modules/ModuleManager.h"
+#include "Runtime/CoreUObject/Public/CoreUObject.h"
+#include "Runtime/Engine/Public/Engine.h"
+#include "Runtime/Slate/Public/SlateBasics.h"
+#include "Runtime/Slate/Public/Widgets/Docking/SDockTab.h"
+#include "Runtime/Slate/Public/Widgets/Input/SMultiLineEditableTextBox.h"
+#include "Runtime/SlateCore/Public/Styling/SlateStyle.h"
 
-
-/* Private includes
- *****************************************************************************/
-
-#include "TextAssetEditorToolkit.h"
-#include "TextAssetActions.h"
-#include "TextAssetEditorStyle.h"
-#include "STextAssetEditor.h"
+#include "../../TextAsset/Public/TextAsset.h"

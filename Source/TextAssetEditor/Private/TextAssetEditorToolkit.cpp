@@ -1,8 +1,8 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
 #include "TextAssetEditorPrivatePCH.h"
-#include "Factories.h"
-#include "SDockTab.h"
+#include "STextAssetEditor.h"
+#include "TextAssetEditorToolkit.h"
 
 
 #define LOCTEXT_NAMESPACE "FTextAssetEditorToolkit"
