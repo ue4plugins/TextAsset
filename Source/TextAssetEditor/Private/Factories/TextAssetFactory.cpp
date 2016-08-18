@@ -1,4 +1,4 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
+// Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
 #include "TextAssetEditorPrivatePCH.h"
 #include "TextAssetFactory.h"
