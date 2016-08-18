@@ -1,6 +1,6 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
-#include "TextAssetPrivatePCH.h"
+#include "TextAssetPCH.h"
 #include "ModuleInterface.h"
 #include "TextAsset.h"
 
