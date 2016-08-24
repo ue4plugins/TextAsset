@@ -3,6 +3,7 @@
 #include "TextAssetEditorPrivatePCH.h"
 #include "AssetEditorToolkit.h"
 #include "ModuleInterface.h"
+#include "TextAssetActions.h"
 #include "TextAssetEditorStyle.h"
 
 
