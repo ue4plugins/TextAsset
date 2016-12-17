@@ -1,6 +1,5 @@
 // Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
-#include "TextAssetEditorPrivatePCH.h"
 #include "AssetEditorToolkit.h"
 #include "ModuleInterface.h"
 #include "TextAssetActions.h"
@@ -20,7 +19,7 @@ class FTextAssetEditorModule
 {
 public:
 
-	// IHasMenuExtensibility interface
+	//~ IHasMenuExtensibility interface
 
 	virtual TSharedPtr<FExtensibilityManager> GetMenuExtensibilityManager() override
 	{
@@ -29,7 +28,7 @@ public:
 
 public:
 
-	// IHasToolBarExtensibility interface
+	//~ IHasToolBarExtensibility interface
 
 	virtual TSharedPtr<FExtensibilityManager> GetToolBarExtensibilityManager() override
 	{
@@ -38,7 +37,7 @@ public:
 
 public:
 
-	// IModuleInterface interface
+	//~ IModuleInterface interface
 
 	virtual void StartupModule() override
 	{

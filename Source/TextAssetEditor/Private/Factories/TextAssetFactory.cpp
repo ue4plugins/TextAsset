@@ -1,7 +1,9 @@
 // Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
-#include "TextAssetEditorPrivatePCH.h"
 #include "TextAssetFactory.h"
+
+#include "TextAsset.h"
+#include "Misc/FileHelper.h"
 
 
 /* UTextAssetFactory structors

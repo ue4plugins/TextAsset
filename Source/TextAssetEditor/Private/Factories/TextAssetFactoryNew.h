@@ -3,6 +3,8 @@
 #pragma once
 
 #include "Factories/Factory.h"
+#include "UObject/ObjectMacros.h"
+
 #include "TextAssetFactoryNew.generated.h"
 
 
@@ -17,7 +19,7 @@ class UTextAssetFactoryNew
 
 public:
 
-	// UFactory Interface
+	//~ UFactory Interface
 
 	virtual UObject* FactoryCreateNew(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn) override;
 	virtual bool ShouldShowInNewMenu() const override;

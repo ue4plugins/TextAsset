@@ -1,8 +1,10 @@
 // Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
-#include "TextAssetEditorPrivatePCH.h"
 #include "TextAssetActions.h"
+
+#include "TextAsset.h"
 #include "TextAssetEditorToolkit.h"
+#include "Styling/SlateStyle.h"
 
 
 #define LOCTEXT_NAMESPACE "AssetTypeActions"
@@ -91,7 +93,7 @@ bool FTextAssetActions::HasActions(const TArray<UObject*>& InObjects) const
 }
 
 
-void FTextAssetActions::OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<class IToolkitHost> EditWithinLevelEditor)
+void FTextAssetActions::OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<IToolkitHost> EditWithinLevelEditor)
 {
 	EToolkitMode::Type Mode = EditWithinLevelEditor.IsValid()
 		? EToolkitMode::WorldCentric

@@ -20,7 +20,8 @@ public class TextAssetEditor : ModuleRules
 				"TextAssetEditor/Private/AssetTools",
 				"TextAssetEditor/Private/Factories",
 				"TextAssetEditor/Private/Styles",
-				"TextAssetEditor/Private/Widgets",
+                "TextAssetEditor/Private/Toolkits",
+                "TextAssetEditor/Private/Widgets",
 			}
 		);
 

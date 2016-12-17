@@ -1,9 +1,11 @@
 // Copyright 2015 Headcrash Industries LLC. All Rights Reserved.
 
-#include "TextAssetEditorPrivatePCH.h"
-#include "STextAssetEditor.h"
 #include "TextAssetEditorToolkit.h"
 
+#include "Editor.h"
+#include "EditorReimportHandler.h"
+#include "STextAssetEditor.h"
+#include "TextAsset.h"
 
 #define LOCTEXT_NAMESPACE "FTextAssetEditorToolkit"
 

@@ -2,8 +2,16 @@
 
 #pragma once
 
-#include "Toolkits/AssetEditorToolkit.h"
+#include "CoreMinimal.h"
 #include "EditorUndoClient.h"
+#include "Toolkits/AssetEditorToolkit.h"
+#include "UObject/GCObject.h"
+
+class FSpawnTabArgs;
+class ISlateStyle;
+class IToolkitHost;
+class SDockTab;
+class UTextAsset;
 
 
 /**
@@ -35,11 +43,11 @@ public:
 	 * @param InMode The mode to create the toolkit in.
 	 * @param InToolkitHost The toolkit host.
 	 */
-	void Initialize(UTextAsset* InTextAsset, const EToolkitMode::Type InMode, const TSharedPtr<class IToolkitHost>& InToolkitHost);
+	void Initialize(UTextAsset* InTextAsset, const EToolkitMode::Type InMode, const TSharedPtr<IToolkitHost>& InToolkitHost);
 
 public:
 
-	// FAssetEditorToolkit interface
+	//~ FAssetEditorToolkit interface
 
 	virtual FString GetDocumentationLink() const override;
 	virtual void RegisterTabSpawners(const TSharedRef<class FTabManager>& TabManager) override;
@@ -47,7 +55,7 @@ public:
 
 public:
 
-	// IToolkit interface
+	//~ IToolkit interface
 
 	virtual FText GetBaseToolkitName() const override;
 	virtual FName GetToolkitFName() const override;
@@ -56,13 +64,13 @@ public:
 
 public:
 
-	// FGCObject interface
+	//~ FGCObject interface
 
 	virtual void AddReferencedObjects(FReferenceCollector& Collector) override;
 	
 protected:
 
-	// FEditorUndoClient interface
+	//~ FEditorUndoClient interface
 
 	virtual void PostUndo(bool bSuccess) override;
 	virtual void PostRedo(bool bSuccess) override;
