@@ -4,7 +4,7 @@ using UnrealBuildTool;
 
 public class TextAssetEditor : ModuleRules
 {
-	public TextAssetEditor(TargetInfo Target)
+	public TextAssetEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[] {
