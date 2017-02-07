@@ -4,8 +4,10 @@
 
 #include "Editor.h"
 #include "EditorReimportHandler.h"
+#include "EditorStyleSet.h"
 #include "STextAssetEditor.h"
 #include "TextAsset.h"
+#include "Widgets/Docking/SDockTab.h"
 
 #define LOCTEXT_NAMESPACE "FTextAssetEditorToolkit"
 
