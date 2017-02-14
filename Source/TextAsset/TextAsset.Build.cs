@@ -4,7 +4,7 @@ namespace UnrealBuildTool.Rules
 {
 	public class TextAsset : ModuleRules
 	{
-		public TextAsset(ReadOnlyTargetRules Target) : base(Target)
+		public TextAsset(TargetInfo Target)
 		{
             PublicDependencyModuleNames.AddRange(
                 new string[] {
