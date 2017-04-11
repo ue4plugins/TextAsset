@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "IPluginManager.h"
 #include "Brushes/SlateImageBrush.h"
 #include "Styling/SlateStyle.h"

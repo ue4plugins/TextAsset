@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "AssetTypeActions_Base.h"
+#include "Templates/SharedPointer.h"
 
 class ISlateStyle;
 

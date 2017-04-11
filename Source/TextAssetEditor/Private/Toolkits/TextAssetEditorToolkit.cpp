@@ -7,6 +7,7 @@
 #include "EditorStyleSet.h"
 #include "STextAssetEditor.h"
 #include "TextAsset.h"
+#include "UObject/NameTypes.h"
 #include "Widgets/Docking/SDockTab.h"
 
 #define LOCTEXT_NAMESPACE "FTextAssetEditorToolkit"
@@ -17,8 +18,11 @@ DEFINE_LOG_CATEGORY_STATIC(LogTextAssetEditor, Log, All);
 /* Local constants
  *****************************************************************************/
 
-static const FName TextAssetEditorAppIdentifier("TextAssetEditorApp");
-static const FName TextEditorTabId("TextEditor");
+namespace TextAssetEditor
+{
+	static const FName AppIdentifier("TextAssetEditorApp");
+	static const FName TabId("TextEditor");
+}
 
 
 /* FTextAssetEditorToolkit structors
@@ -72,7 +76,7 @@ void FTextAssetEditorToolkit::Initialize(UTextAsset* InTextAsset, const EToolkit
 						->Split
 						(
 							FTabManager::NewStack()
-								->AddTab(TextEditorTabId, ETabState::OpenedTab)
+								->AddTab(TextAssetEditor::TabId, ETabState::OpenedTab)
 								->SetHideTabWell(true)
 								->SetSizeCoefficient(0.9f)
 						)
@@ -82,7 +86,7 @@ void FTextAssetEditorToolkit::Initialize(UTextAsset* InTextAsset, const EToolkit
 	FAssetEditorToolkit::InitAssetEditor(
 		InMode,
 		InToolkitHost,
-		TextAssetEditorAppIdentifier,
+		TextAssetEditor::AppIdentifier,
 		Layout,
 		true /*bCreateDefaultStandaloneMenu*/,
 		true /*bCreateDefaultToolbar*/,
@@ -109,7 +113,7 @@ void FTextAssetEditorToolkit::RegisterTabSpawners(const TSharedRef<class FTabMan
 
 	FAssetEditorToolkit::RegisterTabSpawners(InTabManager);
 
-	InTabManager->RegisterTabSpawner(TextEditorTabId, FOnSpawnTab::CreateSP(this, &FTextAssetEditorToolkit::HandleTabManagerSpawnTab, TextEditorTabId))
+	InTabManager->RegisterTabSpawner(TextAssetEditor::TabId, FOnSpawnTab::CreateSP(this, &FTextAssetEditorToolkit::HandleTabManagerSpawnTab, TextAssetEditor::TabId))
 		.SetDisplayName(LOCTEXT("TextEditorTabName", "Text Editor"))
 		.SetGroup(WorkspaceMenuCategoryRef)
 		.SetIcon(FSlateIcon(FEditorStyle::GetStyleSetName(), "LevelEditor.Tabs.Viewports"));
@@ -120,7 +124,7 @@ void FTextAssetEditorToolkit::UnregisterTabSpawners(const TSharedRef<class FTabM
 {
 	FAssetEditorToolkit::UnregisterTabSpawners(InTabManager);
 
-	InTabManager->UnregisterTabSpawner(TextEditorTabId);
+	InTabManager->UnregisterTabSpawner(TextAssetEditor::TabId);
 }
 
 
@@ -180,7 +184,7 @@ TSharedRef<SDockTab> FTextAssetEditorToolkit::HandleTabManagerSpawnTab(const FSp
 {
 	TSharedPtr<SWidget> TabWidget = SNullWidget::NullWidget;
 
-	if (TabIdentifier == TextEditorTabId)
+	if (TabIdentifier == TextAssetEditor::TabId)
 	{
 		TabWidget = SNew(STextAssetEditor, TextAsset, Style);
 	}

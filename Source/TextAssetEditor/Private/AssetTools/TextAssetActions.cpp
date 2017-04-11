@@ -4,8 +4,9 @@
 
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 #include "TextAsset.h"
-#include "TextAssetEditorToolkit.h"
 #include "Styling/SlateStyle.h"
+
+#include "TextAssetEditorToolkit.h"
 
 
 #define LOCTEXT_NAMESPACE "AssetTypeActions"

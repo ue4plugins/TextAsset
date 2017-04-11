@@ -2,6 +2,7 @@
 
 #include "TextAssetFactory.h"
 
+#include "Containers/UnrealString.h"
 #include "TextAsset.h"
 #include "Misc/FileHelper.h"
 

@@ -2,9 +2,10 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "Internationalization/Text.h"
 #include "UObject/Object.h"
 #include "UObject/ObjectMacros.h"
+
 #include "TextAsset.generated.h"
 
 

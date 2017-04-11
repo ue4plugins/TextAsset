@@ -1,9 +1,13 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
-#include "AssetEditorToolkit.h"
-#include "ModuleInterface.h"
-#include "TextAssetActions.h"
-#include "TextAssetEditorStyle.h"
+#include "Containers/Array.h"
+#include "Modules/ModuleInterface.h"
+#include "Modules/ModuleManager.h"
+#include "Templates/SharedPointer.h"
+#include "Toolkits/AssetEditorToolkit.h"
+
+#include "AssetTools/TextAssetActions.h"
+#include "Styles/TextAssetEditorStyle.h"
 
 
 #define LOCTEXT_NAMESPACE "FTextAssetEditorModule"
