@@ -6,7 +6,9 @@ public class TextAssetEditor : ModuleRules
 {
 	public TextAssetEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
-		DynamicallyLoadedModuleNames.AddRange(
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        DynamicallyLoadedModuleNames.AddRange(
 			new string[] {
 				"AssetTools",
 				"MainFrame",
