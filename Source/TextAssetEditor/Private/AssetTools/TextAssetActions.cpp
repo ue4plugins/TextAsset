@@ -47,6 +47,7 @@ void FTextAssetActions::GetActions(const TArray<UObject*>& InObjects, FMenuBuild
 					{
 						TextAsset->Text = FText::FromString(TextAsset->Text.ToString().Reverse());
 						TextAsset->PostEditChange();
+						TextAsset->MarkPackageDirty();
 					}
 				}
 			}),
