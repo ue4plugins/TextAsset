@@ -59,6 +59,11 @@ public:
 		UnregisterMenuExtensions();
 	}
 
+	virtual bool SupportsDynamicReloading() override
+	{
+		return true;
+	}
+
 protected:
 
 	/** Registers asset tool actions. */
