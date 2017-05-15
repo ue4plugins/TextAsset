@@ -33,8 +33,8 @@ public:
 		const FString BaseDir = IPluginManager::Get().FindPlugin("TextAsset")->GetBaseDir();
 		SetContentRoot(BaseDir / TEXT("Content"));
 
-		// toolbar icons
-//		Set("TextAssetEditor.ForwardMedia", new IMAGE_BRUSH("icon_forward_40x", Icon40x40));
+		// set new styles here, for example...
+		//Set("TextAssetEditor.FancyButton", new IMAGE_BRUSH("icon_forward_40x", Icon40x40));
 		
 		FSlateStyleRegistry::RegisterSlateStyle(*this);
 	 }
