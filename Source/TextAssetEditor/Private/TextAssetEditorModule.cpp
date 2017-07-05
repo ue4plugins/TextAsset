@@ -1,6 +1,8 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
 #include "Containers/Array.h"
+#include "ISettingsModule.h"
+#include "ISettingsSection.h"
 #include "Modules/ModuleInterface.h"
 #include "Modules/ModuleManager.h"
 #include "Templates/SharedPointer.h"
@@ -8,6 +10,7 @@
 
 #include "AssetTools/TextAssetActions.h"
 #include "Styles/TextAssetEditorStyle.h"
+#include "TextAssetEditorSettings.h"
 
 
 #define LOCTEXT_NAMESPACE "FTextAssetEditorModule"
@@ -51,12 +54,14 @@ public:
 
 		RegisterAssetTools();
 		RegisterMenuExtensions();
+		RegisterSettings();
 	}
 
 	virtual void ShutdownModule() override
 	{
 		UnregisterAssetTools();
 		UnregisterMenuExtensions();
+		UnregisterSettings();
 	}
 
 	virtual bool SupportsDynamicReloading() override
@@ -86,6 +91,21 @@ protected:
 		RegisteredAssetTypeActions.Add(Action);
 	}
 
+	/** Register the text asset editor settings. */
+	void RegisterSettings()
+	{
+		ISettingsModule* SettingsModule = FModuleManager::GetModulePtr<ISettingsModule>("Settings");
+
+		if (SettingsModule != nullptr)
+		{
+			ISettingsSectionPtr SettingsSection = SettingsModule->RegisterSettings("Editor", "Plugins", "TextAsset",
+				LOCTEXT("TextAssetSettingsName", "Text Asset"),
+				LOCTEXT("TextAssetSettingsDescription", "Configure the Text Asset plug-in."),
+				GetMutableDefault<UTextAssetEditorSettings>()
+			);
+		}
+	}
+
 	/** Unregisters asset tool actions. */
 	void UnregisterAssetTools()
 	{
@@ -99,6 +119,17 @@ protected:
 			{
 				AssetTools.UnregisterAssetTypeActions(Action);
 			}
+		}
+	}
+
+	/** Unregister the text asset editor settings. */
+	void UnregisterSettings()
+	{
+		ISettingsModule* SettingsModule = FModuleManager::GetModulePtr<ISettingsModule>("Settings");
+
+		if (SettingsModule != nullptr)
+		{
+			SettingsModule->UnregisterSettings("Editor", "Plugins", "TextAsset");
 		}
 	}
 

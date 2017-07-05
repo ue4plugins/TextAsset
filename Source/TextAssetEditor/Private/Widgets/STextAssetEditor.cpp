@@ -2,10 +2,14 @@
 
 #include "STextAssetEditor.h"
 
+#include "Fonts/SlateFontInfo.h"
 #include "Internationalization/Text.h"
 #include "TextAsset.h"
+#include "UObject/Class.h"
 #include "Widgets/SBoxPanel.h"
 #include "Widgets/Input/SMultiLineEditableTextBox.h"
+
+#include "TextAssetEditorSettings.h"
 
 
 #define LOCTEXT_NAMESPACE "STextAssetEditor"
@@ -24,6 +28,8 @@ void STextAssetEditor::Construct(const FArguments& InArgs, UTextAsset* InTextAss
 {
 	TextAsset = InTextAsset;
 
+	auto Settings = GetDefault<UTextAssetEditorSettings>();
+
 	ChildSlot
 	[
 		SNew(SVerticalBox)
@@ -32,6 +38,10 @@ void STextAssetEditor::Construct(const FArguments& InArgs, UTextAsset* InTextAss
 			.FillHeight(1.0f)
 			[
 				SAssignNew(EditableTextBox, SMultiLineEditableTextBox)
+					.BackgroundColor((Settings != nullptr) ? Settings->BackgroundColor : FLinearColor::White)
+					.Font((Settings != nullptr) ? Settings->Font : FSlateFontInfo())
+					.ForegroundColor((Settings != nullptr) ? Settings->ForegroundColor : FLinearColor::Black)
+					.Margin((Settings != nullptr) ? Settings->Margin : 4.0f)
 					.OnTextChanged(this, &STextAssetEditor::HandleEditableTextBoxTextChanged)
 					.OnTextCommitted(this, &STextAssetEditor::HandleEditableTextBoxTextCommitted)
 					.Text(TextAsset->Text)

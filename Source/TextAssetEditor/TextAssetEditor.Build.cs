@@ -21,7 +21,8 @@ public class TextAssetEditor : ModuleRules
 				"TextAssetEditor/Private",
 				"TextAssetEditor/Private/AssetTools",
 				"TextAssetEditor/Private/Factories",
-				"TextAssetEditor/Private/Styles",
+                "TextAssetEditor/Private/Shared",
+                "TextAssetEditor/Private/Styles",
                 "TextAssetEditor/Private/Toolkits",
                 "TextAssetEditor/Private/Widgets",
 			}
