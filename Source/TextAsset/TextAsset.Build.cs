@@ -6,20 +6,18 @@ namespace UnrealBuildTool.Rules
 	{
 		public TextAsset(ReadOnlyTargetRules Target) : base(Target)
 		{
-            PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-            PublicDependencyModuleNames.AddRange(
-                new string[] {
+			PublicDependencyModuleNames.AddRange(
+				new string[] {
 					"Core",
 					"CoreUObject",
-                }
-            );
+				});
 
 			PrivateIncludePaths.AddRange(
 				new string[] {
 					"Runtime/TextAsset/Private",
-				}
-			);
+				});
 		}
 	}
 }

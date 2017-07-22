@@ -6,51 +6,47 @@ public class TextAssetEditor : ModuleRules
 {
 	public TextAssetEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
-        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        DynamicallyLoadedModuleNames.AddRange(
+		DynamicallyLoadedModuleNames.AddRange(
 			new string[] {
 				"AssetTools",
 				"MainFrame",
 //				"WorkspaceMenuStructure",
-			}
-		);
+			});
 
 		PrivateIncludePaths.AddRange(
 			new string[] {
 				"TextAssetEditor/Private",
 				"TextAssetEditor/Private/AssetTools",
 				"TextAssetEditor/Private/Factories",
-                "TextAssetEditor/Private/Shared",
-                "TextAssetEditor/Private/Styles",
-                "TextAssetEditor/Private/Toolkits",
-                "TextAssetEditor/Private/Widgets",
-			}
-		);
+				"TextAssetEditor/Private/Shared",
+				"TextAssetEditor/Private/Styles",
+				"TextAssetEditor/Private/Toolkits",
+				"TextAssetEditor/Private/Widgets",
+			});
 
 		PrivateDependencyModuleNames.AddRange(
 			new string[] {
 				"ContentBrowser",
 				"Core",
 				"CoreUObject",
-                "DesktopWidgets",
+				"DesktopWidgets",
 				"EditorStyle",
 				"Engine",
 				"InputCore",
-                "Projects",
+				"Projects",
 				"Slate",
 				"SlateCore",
-                "TextAsset",
+				"TextAsset",
 				"UnrealEd",
-			}
-		);
+			});
 
 		PrivateIncludePathModuleNames.AddRange(
 			new string[] {
 				"AssetTools",
 				"UnrealEd",
 //				"WorkspaceMenuStructure",
-			}
-		);
+			});
 	}
 }
