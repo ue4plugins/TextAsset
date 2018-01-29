@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "IPluginManager.h"
+#include "Interfaces/IPluginManager.h"
 #include "Brushes/SlateImageBrush.h"
 #include "Styling/SlateStyle.h"
 #include "Styling/SlateStyleRegistry.h"
@@ -35,7 +35,7 @@ public:
 
 		// set new styles here, for example...
 		//Set("TextAssetEditor.FancyButton", new IMAGE_BRUSH("icon_forward_40x", Icon40x40));
-		
+
 		FSlateStyleRegistry::RegisterSlateStyle(*this);
 	 }
 
