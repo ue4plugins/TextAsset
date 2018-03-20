@@ -1,8 +1,8 @@
 {
 	"FileVersion" : 3,
-	"Version" : 7,
-	"VersionName" : "7.0",
-	"EngineVersion" : "4.18.0",
+	"Version" : 8,
+	"VersionName" : "8.0",
+	"EngineVersion" : "4.19.0",
 	"FriendlyName" : "Text Asset",
 	"Description" : "Adds an editable text content asset for personal notes.",
 	"Category" : "Editor",
