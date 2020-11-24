@@ -4,6 +4,7 @@
 
 #include "Internationalization/Text.h"
 #include "UObject/Object.h"
+#include "EditorFramework/AssetImportData.h"
 #include "UObject/ObjectMacros.h"
 
 #include "TextAsset.generated.h"
@@ -21,7 +22,25 @@ class TEXTASSET_API UTextAsset
 
 public:
 
+    
+    virtual void PostInitProperties() override;
+
+#if WITH_EDITORONLY_DATA
+
+    virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override
+    {
+        if (AssetImportData)
+        {
+            OutTags.Add(FAssetRegistryTag(SourceFileTagName(), AssetImportData->GetSourceData().ToJson(), FAssetRegistryTag::TT_Hidden));
+        }
+
+        Super::GetAssetRegistryTags(OutTags);
+    }
+    
+    UPROPERTY(VisibleAnywhere, Instanced, Category = ImportSettings)
+    UAssetImportData* AssetImportData;
+#endif
 	/** Holds the stored text. */
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="TextAsset")
-	FText Text;
+    UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="TextAsset")
+    FText Text;
 };
