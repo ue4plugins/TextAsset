@@ -2,6 +2,8 @@
 
 #include "TextAssetActions.h"
 
+
+#include "EditorReimportHandler.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 #include "TextAsset.h"
 #include "Styling/SlateStyle.h"
@@ -34,6 +36,23 @@ void FTextAssetActions::GetActions(const TArray<UObject*>& InObjects, FMenuBuild
 	FAssetTypeActions_Base::GetActions(InObjects, MenuBuilder);
 
 	auto TextAssets = GetTypedWeakObjectPtrs<UTextAsset>(InObjects);
+
+        MenuBuilder.AddMenuEntry(
+            LOCTEXT("TextAsset_ReImportText", "Re-Import Text"),
+            LOCTEXT("TextAsset_ReImportTextToolTip", "Re Import text from disk."),
+            FSlateIcon(),
+            FUIAction(
+                FExecuteAction::CreateLambda([=]
+                {
+                    for (auto &TextAsset : TextAssets) {
+                        FReimportManager::Instance()->Reimport(TextAsset.Get(), true);
+                    }
+                }),
+                FCanExecuteAction::CreateLambda([=]
+                    {
+                        return true;
+                    }
+                    )));
 
 	MenuBuilder.AddMenuEntry(
 		LOCTEXT("TextAsset_ReverseText", "Reverse Text"),
