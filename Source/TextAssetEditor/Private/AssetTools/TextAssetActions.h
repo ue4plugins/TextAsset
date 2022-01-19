@@ -12,10 +12,8 @@ class ISlateStyle;
  * Implements an action for UTextAsset assets.
  */
 class FTextAssetActions
-	: public FAssetTypeActions_Base
-{
+	: public FAssetTypeActions_Base {
 public:
-
 	/**
 	 * Creates and initializes a new instance.
 	 *
@@ -65,10 +63,16 @@ public:
 	 * @return If any of the InObjects have actions available
 	 */
 	virtual bool HasActions(const TArray<UObject*>& InObjects) const override;
+
+	/**
+	 * Called whenever a user wishes to open an asset(or assets) for editing
+	 * @param InObjects Assets that the user is trying to open
+	 * @param EditWithinLevelEditor Pointer to the toolkit host, defaulted to exist.
+	 *			Checked within the function to determine which type of asset editor to open
+	 */
 	virtual void OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<IToolkitHost> EditWithinLevelEditor = TSharedPtr<IToolkitHost>()) override;
 
 private:
-
 	/** Pointer to the style set to use for toolkits. */
 	TSharedRef<ISlateStyle> Style;
 };
