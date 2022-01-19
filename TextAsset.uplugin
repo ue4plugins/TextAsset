@@ -1,8 +1,8 @@
 {
 	"FileVersion" : 3,
 	"Version" : 8,
-	"VersionName" : "8.0",
-	"EngineVersion" : "4.19.0",
+	"VersionName" : "8.1",
+	"EngineVersion" : "4.27",
 	"FriendlyName" : "Text Asset",
 	"Description" : "Adds an editable text content asset for personal notes.",
 	"Category" : "Editor",
@@ -27,6 +27,5 @@
 			"Type" : "Editor",
 			"LoadingPhase" : "Default"
 		}
-
 	]
 }
